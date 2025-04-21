@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35707.178 d17.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactsManger.UI", "ContactsManger.UI\ContactsManger.UI.csproj", "{7270D004-86B6-4BEE-93C0-6E66FB9084DD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{31DA90BD-68B5-4AF6-B71C-592484687C44}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{93D22183-FD4E-46D9-BCA8-4C1543255505}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactsMangaer.Core", "ContactsMangaer.Core\ContactsMangaer.Core.csproj", "{FB3DA574-DD17-422A-A639-FD6AE22F63BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactsMangaer.Infrastructure", "ContactsMangaer.Infrastructure\ContactsMangaer.Infrastructure.csproj", "{72D13023-0B2B-45B5-94FC-A40F601039E6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7270D004-86B6-4BEE-93C0-6E66FB9084DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7270D004-86B6-4BEE-93C0-6E66FB9084DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7270D004-86B6-4BEE-93C0-6E66FB9084DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7270D004-86B6-4BEE-93C0-6E66FB9084DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB3DA574-DD17-422A-A639-FD6AE22F63BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB3DA574-DD17-422A-A639-FD6AE22F63BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB3DA574-DD17-422A-A639-FD6AE22F63BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB3DA574-DD17-422A-A639-FD6AE22F63BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72D13023-0B2B-45B5-94FC-A40F601039E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72D13023-0B2B-45B5-94FC-A40F601039E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72D13023-0B2B-45B5-94FC-A40F601039E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72D13023-0B2B-45B5-94FC-A40F601039E6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7270D004-86B6-4BEE-93C0-6E66FB9084DD} = {31DA90BD-68B5-4AF6-B71C-592484687C44}
+		{FB3DA574-DD17-422A-A639-FD6AE22F63BF} = {31DA90BD-68B5-4AF6-B71C-592484687C44}
+		{72D13023-0B2B-45B5-94FC-A40F601039E6} = {31DA90BD-68B5-4AF6-B71C-592484687C44}
+	EndGlobalSection
+EndGlobal

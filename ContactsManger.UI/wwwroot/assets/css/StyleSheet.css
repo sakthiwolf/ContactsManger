@@ -1,0 +1,15 @@
+﻿.table-fixed {
+    table-layout: fixed;
+    width: 100%;
+    word-wrap: break-word;
+}
+.app-brand {
+    line-height: 4 !important;
+}
+
+div #btnf {
+    padding: 27px !important;
+}
+.flatpickr-calendar.animate.arrowTop.arrowLeft.open {
+    background-color: #ffffff;
+}

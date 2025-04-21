@@ -1,0 +1,41 @@
+﻿@model PersonResponse
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewBag.Title = "delete Person";
+}
+
+<div class="col-md mb-4 mb-md-0">
+    <div class="card">
+        <h5 class="card-header">Delete Person</h5>
+        <div class="card-body">
+            <h5 class="card-header">Are you sure to delete this Person ?</h5>
+            <form class="browser-default-validation" asp-controller="Person" asp-action="Delete" method="post">
+
+                <input type="hidden" asp-for="PersonId" />
+
+                <div class="form-floating form-floating-outline mb-4">
+                    <input asp-for="PersonName" class="form-control"  disabled="disabled" />
+                    <label asp-for="PersonName"></label>
+                    <span class="text-danger" asp-validation-for="PersonName"></span>
+                </div>
+                <div class="form-floating form-floating-outline mb-4">
+                    <input asp-for="Email" class="form-control"  disabled="disabled"/>
+                    <label asp-for="Email"></label>
+                    <span class="text-danger" asp-validation-for="Email"></span>
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="../../assets/js/forms-pickers.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.21.0/jquery.validate.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/4.0.0/jquery.validate.unobtrusive.min.js"></script>

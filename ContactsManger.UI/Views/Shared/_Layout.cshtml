@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+
+    <title>@ViewBag.Title</title>
+
+    <meta name="description" content="" />
+
+    @await Html.PartialAsync("_Assets")
+
+</head>
+
+<body>
+    <div class="layout-wrapper layout-navbar-full layout-horizontal layout-without-menu">
+       <div class="layout-container">
+             @await Html.PartialAsync("_NavBar")
+            <!-- Layout container -->
+            <div class="layout-page">
+                <div class="content-wrapper">
+                    <!-- Menu -->
+                    <aside id="layout-menu"
+                           class="layout-menu-horizontal menu-horizontal menu bg-menu-theme flex-grow-0">
+                        <div class="container-xxl d-flex h-100">
+                            <ul class="menu-inner py-1">
+                                <!-- Page -->
+                                <li class="menu-item active">
+                                    <a asp-controller ="Person" asp-action="index" class="menu-link">
+                                        <i class="menu-icon tf-icons mdi mdi-home-outline"></i>
+                                        <div data-i18n="Page 1">Home</div>
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a asp-controller="Person" asp-action="Create" class="menu-link">
+                                        <i class="menu-icon tf-icons mdi mdi-file-outline"></i>
+                                        <div>Create Person</div>
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a asp-controller="Person" asp-action="PersonPDF" class="menu-link">
+                                        <i class="menu-icon tf-icons mdi mdi-file-outline"></i>
+                                        <div>Dowload as PDF</div>
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a asp-controller="Person" asp-action="PersonCSV" class="menu-link">
+                                        <i class="menu-icon tf-icons mdi mdi-file-outline"></i>
+                                        <div>Dowload as CSV</div>
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a asp-controller="Person" asp-action="PersonExcel" class="menu-link">
+                                        <i class="menu-icon tf-icons mdi mdi-file-outline"></i>
+                                        <div>Dowload as Excel</div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </aside>
+                    <!-- / Menu -->
+                    <div class="container-xxl flex-grow-1 container-p-y">
+                        @RenderBody()
+                    </div>
+                </div>
+       </div>
+            <!-- Content -->
+     </div>
+   </div>
+</body>
+</html>

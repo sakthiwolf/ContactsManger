@@ -1,0 +1,103 @@
+[
+    {
+      "PersonID": "550e8400-e29b-41d4-a716-446655440000",
+      "PersonName": "John Doe",
+      "Email": "johndoe@example.com",
+      "DateOfBirth": "1995-05-20T00:00:00",
+      "Gender": "Male",
+      "CountryID": "123e4567-e89b-12d3-a456-426614174000",
+      "Address": "123 Main Street, New York, USA",
+      "ReceiveNewsLetters": true
+    },
+    {
+      "PersonID": "550e8400-e29b-41d4-a716-446655440001",
+      "PersonName": "Jane Smith",
+      "Email": "janesmith@example.com",
+      "DateOfBirth": "1998-09-15T00:00:00",
+      "Gender": "Female",
+      "CountryID": "223e4567-e89b-12d3-a456-426614174001",
+      "Address": "456 Oak Avenue, London, UK",
+      "ReceiveNewsLetters": false
+    },
+    {
+      "PersonID": "550e8400-e29b-41d4-a716-446655440002",
+      "PersonName": "Alice Johnson",
+      "Email": "alicej@example.com",
+      "DateOfBirth": "1987-03-10T00:00:00",
+      "Gender": "Female",
+      "CountryID": "323e4567-e89b-12d3-a456-426614174002",
+      "Address": "789 Pine Street, Toronto, Canada",
+      "ReceiveNewsLetters": true
+    },
+    {
+      "PersonID": "550e8400-e29b-41d4-a716-446655440003",
+      "PersonName": "Robert Brown",
+      "Email": "robertb@example.com",
+      "DateOfBirth": "1992-11-25T00:00:00",
+      "Gender": "Male",
+      "CountryID": "423e4567-e89b-12d3-a456-426614174003",
+      "Address": "147 Maple Drive, Sydney, Australia",
+      "ReceiveNewsLetters": false
+    },
+    {
+      "PersonID": "550e8400-e29b-41d4-a716-446655440004",
+      "PersonName": "Emma Wilson",
+      "Email": "emmaw@example.com",
+      "DateOfBirth": "1990-07-08T00:00:00",
+      "Gender": "Female",
+      "CountryID": "523e4567-e89b-12d3-a456-426614174004",
+      "Address": "963 Birch Lane, Berlin, Germany",
+      "ReceiveNewsLetters": true
+    },
+    {
+      "PersonID": "550e8400-e29b-41d4-a716-446655440005",
+      "PersonName": "Daniel Lee",
+      "Email": "danle@example.com",
+      "DateOfBirth": "1985-06-17T00:00:00",
+      "Gender": "Male",
+      "CountryID": "623e4567-e89b-12d3-a456-426614174005",
+      "Address": "852 Elm Street, Tokyo, Japan",
+      "ReceiveNewsLetters": false
+    },
+    {
+      "PersonID": "550e8400-e29b-41d4-a716-446655440006",
+      "PersonName": "Sophia Martinez",
+      "Email": "sophiam@example.com",
+      "DateOfBirth": "2000-01-30T00:00:00",
+      "Gender": "Female",
+      "CountryID": "723e4567-e89b-12d3-a456-426614174006",
+      "Address": "357 Cedar Avenue, Paris, France",
+      "ReceiveNewsLetters": true
+    },
+    {
+      "PersonID": "550e8400-e29b-41d4-a716-446655440007",
+      "PersonName": "William Taylor",
+      "Email": "williamt@example.com",
+      "DateOfBirth": "1983-09-21T00:00:00",
+      "Gender": "Male",
+      "CountryID": "823e4567-e89b-12d3-a456-426614174007",
+      "Address": "159 Willow Road, Madrid, Spain",
+      "ReceiveNewsLetters": false
+    },
+    {
+      "PersonID": "550e8400-e29b-41d4-a716-446655440008",
+      "PersonName": "Olivia Hernandez",
+      "Email": "oliviah@example.com",
+      "DateOfBirth": "1997-04-12T00:00:00",
+      "Gender": "Female",
+      "CountryID": "923e4567-e89b-12d3-a456-426614174008",
+      "Address": "951 Spruce Boulevard, Rome, Italy",
+      "ReceiveNewsLetters": true
+    },
+    {
+      "PersonID": "550e8400-e29b-41d4-a716-446655440009",
+      "PersonName": "James Anderson",
+      "Email": "jamesa@example.com",
+      "DateOfBirth": "1994-02-28T00:00:00",
+      "Gender": "Male",
+      "CountryID": "a23e4567-e89b-12d3-a456-426614174009",
+      "Address": "753 Redwood Street, Moscow, Russia",
+      "ReceiveNewsLetters": false
+    }
+  ]
+  

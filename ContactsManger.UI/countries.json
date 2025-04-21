@@ -1,0 +1,43 @@
+[
+    {
+      "CountryId": "123e4567-e89b-12d3-a456-426614174000",
+      "CountryName": "United States"
+    },
+    {
+      "CountryId": "223e4567-e89b-12d3-a456-426614174001",
+      "CountryName": "United Kingdom"
+    },
+    {
+      "CountryId": "323e4567-e89b-12d3-a456-426614174002",
+      "CountryName": "Canada"
+    },
+    {
+      "CountryId": "423e4567-e89b-12d3-a456-426614174003",
+      "CountryName": "Australia"
+    },
+    {
+      "CountryId": "523e4567-e89b-12d3-a456-426614174004",
+      "CountryName": "Germany"
+    },
+    {
+      "CountryId": "623e4567-e89b-12d3-a456-426614174005",
+      "CountryName": "Japan"
+    },
+    {
+      "CountryId": "723e4567-e89b-12d3-a456-426614174006",
+      "CountryName": "France"
+    },
+    {
+      "CountryId": "823e4567-e89b-12d3-a456-426614174007",
+      "CountryName": "Spain"
+    },
+    {
+      "CountryId": "923e4567-e89b-12d3-a456-426614174008",
+      "CountryName": "Italy"
+    },
+    {
+      "CountryId": "a23e4567-e89b-12d3-a456-426614174009",
+      "CountryName": "Russia"
+    }
+  ]
+  

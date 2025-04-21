@@ -1,0 +1,103 @@
+﻿@model PersonAddRequest
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewBag.Title = "Create Person";
+}
+
+<div class="col-md mb-4 mb-md-0">
+    <div class="card">
+        <h5 class="card-header">Create Person</h5>
+        <div class="card-body">
+            <form asp-controller="Person" asp-action="Create" method="post">
+                <div class="form-floating form-floating-outline mb-4">
+                    <input asp-for="PersonName" class="form-control" placeholder="John Doe" />
+                    <label asp-for="PersonName"></label>
+                    <span class="text-danger" asp-validation-for="PersonName"></span>
+                </div>
+
+                <div class="form-floating form-floating-outline mb-4">
+                    <input asp-for="Email" class="form-control" placeholder="john.doe@example.com" />
+                    <label asp-for="Email"></label>
+                    <span class="text-danger" asp-validation-for="Email"></span>
+                </div>
+
+                <!-- Date Picker -->
+                <div class="col-md-6 col-12 mb-4">
+                    <div class="form-floating form-floating-outline">
+                        <input asp-for="DateOfBirth" type="date" class="form-control" />
+                        <label asp-for="DateOfBirth"></label>
+                        <span class="text-danger" asp-validation-for="DateOfBirth"></span>
+                    </div>
+                </div>
+                <!-- /Date Picker -->
+
+                <div class="form-floating form-floating-outline mb-4">
+                    <select asp-for="CountryID" class="form-select">
+                        <option value="">Please Select</option>
+                        @foreach (var country in ViewBag.Countries)
+                        {
+                            <option value="@country.CountryId">@country.CountryName</option>
+                        }
+                    </select>
+                    <label asp-for="CountryID"></label>
+                    <span class="text-danger" asp-validation-for="CountryID"></span>
+                </div>
+
+                <div class="mb-4">
+                    <label class="d-block form-label">Gender</label>
+                    <div class="form-check">
+                        <input asp-for="Gender" type="radio" value="Male" class="form-check-input" />
+                        <label class="form-check-label">Male</label>
+                    </div>
+                    <div class="form-check">
+                        <input asp-for="Gender" type="radio" value="Female" class="form-check-input" />
+                        <label class="form-check-label">Female</label>
+                    </div>
+                    <div class="form-check">
+                        <input asp-for="Gender" type="radio" value="Other" class="form-check-input" />
+                        <label class="form-check-label">Other</label>
+                    </div>
+                    <span class="text-danger" asp-validation-for="Gender"></span>
+                </div>
+
+                <div class="form-floating form-floating-outline mb-4">
+                    <textarea asp-for="Address" class="form-control h-px-75" placeholder="Your Address" rows="3"></textarea>
+                    <label asp-for="Address"></label>
+                    <span class="text-danger" asp-validation-for="Address"></span>
+                </div>
+
+                <!-- Fix for ReceiveNewsLetters -->
+                <div class="mb-3">
+                    <div class="form-check">
+                        <input asp-for="ReceiveNewsLetters" class="form-check-input" type="checkbox" value="true" />
+                        <label class="form-check-label" asp-for="ReceiveNewsLetters">Receive News Letters</label>
+                    </div>
+                    <span class="text-danger" asp-validation-for="ReceiveNewsLetters"></span>
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-success">Create</button>
+                    </div>
+                </div>
+
+                @if (ViewBag.Errors != null)
+                {
+                    <div class="alert alert-danger mt-3">
+                        <ul>
+                            @foreach (var error in ViewBag.Errors)
+                            {
+                                <li>@error</li>
+                            }
+                        </ul>
+                    </div>
+                }
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.21.0/jquery.validate.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/4.0.0/jquery.validate.unobtrusive.min.js"></script>
