@@ -1,16 +1,19 @@
-﻿using Microsoft.EntityFrameworkCore;
-
+using Microsoft.EntityFrameworkCore;
 using ServiceContracts;
 using Repositories;
 using Services;
 using RepositroyContracts;
 using Enities;
 
-
 var builder = WebApplication.CreateBuilder(args);
 
-// Add MVC support
+// Enable console logging (for Render logs)
+builder.Logging.ClearProviders();
+builder.Logging.AddConsole();
+
+// Add MVC support with Razor view runtime compilation
 builder.Services.AddControllersWithViews();
+             
 
 // Register repositories
 builder.Services.AddScoped<IPersonRepositroy, PersonRepositroy>();
@@ -28,17 +31,28 @@ builder.Services.AddDbContext<PersonsDbContext>(options =>
 
 var app = builder.Build();
 
+// Use detailed error page in development
 if (app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
 }
+else
+{
+    // Use exception handler in production
+    app.UseExceptionHandler("/Home/Error");
+    app.UseHsts();
+}
 
-// Rotativa setup for PDF generation (if used)
-Rotativa.AspNetCore.RotativaConfiguration.Setup("wwwroot", wkhtmltopdfRelativePath: "Rotativa");
-
-// Middleware
+// Enable HTTPS redirection and static files
+app.UseHttpsRedirection();
 app.UseStaticFiles();
+
 app.UseRouting();
-app.MapControllers();
+app.UseAuthorization();
+
+// Default MVC routing
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
