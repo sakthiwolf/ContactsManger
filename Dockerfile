@@ -1,38 +1,31 @@
-# Base runtime image
-FROM mcr.microsoft.com/dotnet/aspnet:9.0-preview AS base
-WORKDIR /app
-EXPOSE 80
-EXPOSE 443
+# See https://aka.ms/customizecontainer to learn how to customize your debug container and how Visual Studio uses this Dockerfile to build your images for faster debugging.
 
-# SDK image for building
-FROM mcr.microsoft.com/dotnet/sdk:9.0-preview AS build
+# This stage is used when running from VS in fast mode (Default for Debug configuration)
+FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS base
+USER $APP_UID
+WORKDIR /app
+EXPOSE 8080
+
+
+# This stage is used to build the service project
+FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-
-# Copy project files
 COPY ["ContactsManger.UI/ContactsManger.UI.csproj", "ContactsManger.UI/"]
 COPY ["ContactsMangaer.Core/ContactsMangaer.Core.csproj", "ContactsMangaer.Core/"]
 COPY ["ContactsMangaer.Infrastructure/ContactsMangaer.Infrastructure.csproj", "ContactsMangaer.Infrastructure/"]
-
-# Restore dependencies
-RUN dotnet restore "ContactsManger.UI/ContactsManger.UI.csproj"
-
-# Copy all source code
+RUN dotnet restore "./ContactsManger.UI/ContactsManger.UI.csproj"
 COPY . .
-
-# Set working directory to UI project and build
 WORKDIR "/src/ContactsManger.UI"
-RUN dotnet build "ContactsManger.UI.csproj" -c $BUILD_CONFIGURATION -o /app/build
+RUN dotnet build "./ContactsManger.UI.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
-# Publish the app
+# This stage is used to publish the service project to be copied to the final stage
 FROM build AS publish
 ARG BUILD_CONFIGURATION=Release
-RUN dotnet publish "ContactsManger.UI.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "./ContactsManger.UI.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
 
-# Final runtime image
+# This stage is used in production or when running from VS in regular mode (Default when not using the Debug configuration)
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-
-# Start the application
 ENTRYPOINT ["dotnet", "ContactsManger.UI.dll"]
